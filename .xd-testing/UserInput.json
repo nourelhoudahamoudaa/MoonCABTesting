@@ -5,5 +5,12 @@
       "name": "MoonCAB",
       "userDefined": true
     }
+  ],
+  "fragments": [
+    {
+      "name": "Animal",
+      "ontologyName": "MoonCAB",
+      "fileName": "MoonCAB/Animal/AnimalBehavior_Animal.owl"
+    }
   ]
 }
