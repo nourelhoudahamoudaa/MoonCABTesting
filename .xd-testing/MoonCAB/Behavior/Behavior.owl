@@ -1,0 +1,1154 @@
+@prefix ns1: <http://www.owl-ontologies.com/AnimalBehavior/Behavior/> .
+@prefix ns2: <http://www.w3.org/2003/11/swrl#> .
+@prefix ns3: <http://ontologydesignpatterns.org/opla-sd#> .
+@prefix ns4: <http://www.owl-ontologies.com/AnimalBehavior/Herd/> .
+@prefix ns5: <http://www.owl-ontologies.com/> .
+@prefix ns6: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:HeadBack a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:HeadForward a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:HeadLeft a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:HeadRight a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:HeadSideways a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:Horizontally a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:ImmobileHead a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:Invisible a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:InvisibleJaw a ns1:BodyMovement,
+        ns1:MvJaw,
+        owl:NamedIndividual .
+
+ns1:Isolation a ns1:AbnormalBehavior,
+        ns1:Behavior,
+        owl:NamedIndividual .
+
+ns1:Jumping a ns1:Behavior,
+        ns1:MovingBehavior,
+        owl:NamedIndividual .
+
+ns1:Legs0 a ns1:BodyMovement,
+        ns1:MvLegs,
+        owl:NamedIndividual .
+
+ns1:Legs2 a ns1:BodyMovement,
+        ns1:MvLegs,
+        owl:NamedIndividual .
+
+ns1:Legs4 a ns1:BodyMovement,
+        ns1:MvLegs,
+        owl:NamedIndividual .
+
+ns1:Lowered a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:Panting a ns1:AbnormalBehavior,
+        ns1:Behavior,
+        owl:NamedIndividual .
+
+ns1:Pica a ns1:AbnormalBehavior,
+        ns1:Behavior,
+        owl:NamedIndividual .
+
+ns1:Playing a ns1:Behavior,
+        ns1:MovingBehavior,
+        owl:NamedIndividual .
+
+ns1:Puffed a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:Raised a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:Running a ns1:Behavior,
+        ns1:MovingBehavior,
+        owl:NamedIndividual .
+
+ns1:Sitting a ns1:Behavior,
+        ns1:RestBehavior,
+        owl:NamedIndividual .
+
+ns1:Sleeping a ns1:Behavior,
+        ns1:RestBehavior,
+        owl:NamedIndividual .
+
+ns1:Stiffened a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:StifflyHeld a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:Straight a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:WaggingHappily a ns1:BodyMovement,
+        ns1:MvTail,
+        owl:NamedIndividual .
+
+ns1:Wallowing a ns1:Behavior,
+        ns1:MovingBehavior,
+        owl:NamedIndividual .
+
+ns1:Wool-biting a ns1:Behavior,
+        ns1:MovingBehavior,
+        owl:NamedIndividual .
+
+ns1:hasBack a owl:ObjectProperty ;
+    rdfs:domain ns4:Body ;
+    rdfs:range ns4:Back .
+
+ns1:hasBackMovement a owl:ObjectProperty ;
+    rdfs:domain ns4:Back ;
+    rdfs:range ns1:BodyMovement,
+        ns1:MvBack .
+
+ns1:hasChew a owl:ObjectProperty ;
+    rdfs:range <http://www.owl-ontologies.com/AnimalBehavior/Chew> .
+
+ns1:hasDuration a owl:DatatypeProperty ;
+    rdfs:domain ns1:Period ;
+    rdfs:range xsd:integer .
+
+ns1:hasEyes a owl:ObjectProperty ;
+    rdfs:domain ns4:Body ;
+    rdfs:range ns4:Eyes .
+
+ns1:hasEyesState a owl:ObjectProperty ;
+    rdfs:domain ns4:Eyes ;
+    rdfs:range ns1:BodyMovement,
+        ns1:MvEyes .
+
+ns1:hasImmobilityMovement a owl:ObjectProperty ;
+    rdfs:domain ns1:Movement ;
+    rdfs:range ns1:Immobility .
+
+ns1:hasJawPosition a owl:ObjectProperty ;
+    rdfs:domain ns4:Jaw ;
+    rdfs:range ns4:Position .
+
+ns1:hasNextMovement a owl:ObjectProperty ;
+    rdfs:domain ns1:Movement ;
+    rdfs:range ns1:Movement ;
+    owl:inverseOf ns1:hasPreviousMovement .
+
+ns1:hasPeriod a owl:ObjectProperty ;
+    rdfs:domain ns1:Movement ;
+    rdfs:range ns1:Period ;
+    owl:inverseOf ns1:isPeriodOf .
+
+ns1:hasTail a owl:ObjectProperty ;
+    rdfs:domain ns4:Body ;
+    rdfs:range ns4:Tail .
+
+ns1:hasTailMovement a owl:ObjectProperty ;
+    rdfs:domain ns4:Tail ;
+    rdfs:range ns1:BodyMovement,
+        ns1:MvTail .
+
+ns1:hasTimeEnd a owl:DatatypeProperty ;
+    rdfs:domain ns1:Period ;
+    rdfs:range xsd:dateTime .
+
+ns1:hasTimeStart a owl:DatatypeProperty ;
+    rdfs:domain ns1:Period ;
+    rdfs:range xsd:dateTime .
+
+ns4:BackArched a ns1:BodyMovement,
+        ns1:MvBack .
+
+ns4:BackCurved a ns1:BodyMovement,
+        ns1:MvBack .
+
+ns4:BackCurvedUnder a ns1:BodyMovement,
+        ns1:MvBack .
+
+ns4:BackRelaxed a ns1:BodyMovement,
+        ns1:MvBack .
+
+ns4:BackSlightlyArched a ns1:BodyMovement,
+        ns1:MvBack .
+
+ns4:BackTensed a ns1:BodyMovement,
+        ns1:MvBack .
+
+ns4:BackTouchingGround a ns1:BodyMovement,
+        ns1:MvBack .
+
+ns4:ModeratelyRich a ns1:BodyMovement,
+        ns1:MvLegs .
+
+ns4:ModeratelySatisfied a ns1:BodyMovement,
+        ns1:MvJaw .
+
+ns4:hasBodyForm rdfs:domain ns1:Movement .
+
+<http://www.owl-ontologies.com/AnimalBehavior/Pasture/hasItemsPosition> rdfs:domain ns1:NonFoodItems .
+
+<http://www.owl-ontologies.com/AnimalBehavior/Pasture/hasNoFoodItems> rdfs:range ns1:NonFoodItems .
+
+ns1:Drinking a ns1:Behavior,
+        ns1:DrinkingBehavior,
+        owl:NamedIndividual .
+
+ns1:DrinkingBehavior a owl:Class ;
+    rdfs:subClassOf ns1:Behavior .
+
+ns1:HeadLowered a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:Herd02Sheep02\(1\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(1\)M\(1\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(1\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 45 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(1\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(1\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(1\)M\(1\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(1\)M\(1\)Jaw .
+
+ns1:Herd02Sheep02\(2\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(2\)M\(1\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(2\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 45 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(2\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(2\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(2\)M\(1\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(2\)M\(1\)Jaw .
+
+ns1:Herd02Sheep02\(3\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(3\)M\(1\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(3\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 37 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(3\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(3\)M\(2\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(3\)M\(2\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:ImmobileJaw .
+
+ns1:Herd02Sheep02\(3\)M\(2\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:Moving .
+
+ns1:Herd02Sheep02\(3\)M\(2\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 8 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(3\)Mvmt\(2\) .
+
+ns1:Herd02Sheep02\(3\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(3\)M\(1\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(3\)M\(1\)Jaw .
+
+ns1:Herd02Sheep02\(3\)Mvmt\(2\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(3\)M\(2\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(3\)M\(2\)Jaw ;
+    ns1:hasLegs ns1:Herd02Sheep02\(3\)M\(2\)Legs .
+
+ns1:Herd02Sheep02\(4\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadElevated,
+        ns1:HeadMovesRapidly .
+
+ns1:Herd02Sheep02\(4\)M\(1\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:Moving .
+
+ns1:Herd02Sheep02\(4\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 11 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(4\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(4\)M\(2\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(4\)M\(2\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(4\)M\(2\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 20 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(4\)Mvmt\(2\) .
+
+ns1:Herd02Sheep02\(4\)M\(3\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadElevated .
+
+ns1:Herd02Sheep02\(4\)M\(3\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:ImmobileJaw .
+
+ns1:Herd02Sheep02\(4\)M\(3\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:Moving .
+
+ns1:Herd02Sheep02\(4\)M\(3\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 14 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(4\)Mvmt\(3\) .
+
+ns1:Herd02Sheep02\(4\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(4\)M\(1\)Head ;
+    ns1:hasLegs ns1:Herd02Sheep02\(4\)M\(1\)Legs .
+
+ns1:Herd02Sheep02\(4\)Mvmt\(2\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(4\)M\(2\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(4\)M\(2\)Jaw .
+
+ns1:Herd02Sheep02\(4\)Mvmt\(3\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(4\)M\(3\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(4\)M\(3\)Jaw ;
+    ns1:hasLegs ns1:Herd02Sheep02\(4\)M\(3\)Legs .
+
+ns1:Herd02Sheep02\(5\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(5\)M\(1\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(5\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 42 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(5\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(5\)M\(2\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(5\)M\(2\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:ImmobileJaw .
+
+ns1:Herd02Sheep02\(5\)M\(2\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:Moving .
+
+ns1:Herd02Sheep02\(5\)M\(2\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 3 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(5\)Mvmt\(2\) .
+
+ns1:Herd02Sheep02\(5\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(5\)M\(1\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(5\)M\(1\)Jaw .
+
+ns1:Herd02Sheep02\(5\)Mvmt\(2\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(5\)M\(2\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(5\)M\(2\)Jaw ;
+    ns1:hasLegs ns1:Herd02Sheep02\(5\)M\(2\)Legs .
+
+ns1:Herd02Sheep02\(6\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadElevated,
+        ns1:HeadMovesRapidly .
+
+ns1:Herd02Sheep02\(6\)M\(1\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:Moving .
+
+ns1:Herd02Sheep02\(6\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 11 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(6\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(6\)M\(2\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(6\)M\(2\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(6\)M\(2\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 16 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(6\)Mvmt\(2\) .
+
+ns1:Herd02Sheep02\(6\)M\(3\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadElevated .
+
+ns1:Herd02Sheep02\(6\)M\(3\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:ImmobileJaw .
+
+ns1:Herd02Sheep02\(6\)M\(3\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:Moving .
+
+ns1:Herd02Sheep02\(6\)M\(3\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 12 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(6\)Mvmt\(3\) .
+
+ns1:Herd02Sheep02\(6\)M\(4\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadElevated .
+
+ns1:Herd02Sheep02\(6\)M\(4\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:ImmobileJaw .
+
+ns1:Herd02Sheep02\(6\)M\(4\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:ImmobileLegs .
+
+ns1:Herd02Sheep02\(6\)M\(4\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 3 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(6\)Mvmt\(4\) .
+
+ns1:Herd02Sheep02\(6\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(6\)M\(1\)Head ;
+    ns1:hasLegs ns1:Herd02Sheep02\(6\)M\(1\)Legs .
+
+ns1:Herd02Sheep02\(6\)Mvmt\(2\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(6\)M\(2\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(6\)M\(2\)Jaw .
+
+ns1:Herd02Sheep02\(6\)Mvmt\(3\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(6\)M\(3\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(6\)M\(3\)Jaw ;
+    ns1:hasLegs ns1:Herd02Sheep02\(6\)M\(3\)Legs .
+
+ns1:Herd02Sheep02\(6\)Mvmt\(4\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(6\)M\(4\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(6\)M\(4\)Jaw ;
+    ns1:hasLegs ns1:Herd02Sheep02\(6\)M\(4\)Legs .
+
+ns1:Herd02Sheep02\(7\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(7\)M\(1\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(7\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 42 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(7\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(7\)M\(2\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadElevated .
+
+ns1:Herd02Sheep02\(7\)M\(2\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:ImmobileJaw .
+
+ns1:Herd02Sheep02\(7\)M\(2\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:ImmobileLegs .
+
+ns1:Herd02Sheep02\(7\)M\(2\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 3 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(7\)Mvmt\(2\) .
+
+ns1:Herd02Sheep02\(7\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(7\)M\(1\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(7\)M\(1\)Jaw .
+
+ns1:Herd02Sheep02\(7\)Mvmt\(2\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(7\)M\(2\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(7\)M\(2\)Jaw ;
+    ns1:hasLegs ns1:Herd02Sheep02\(7\)M\(2\)Legs .
+
+ns1:Herd02Sheep02\(8\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(8\)M\(1\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(8\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 22 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(8\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(8\)M\(2\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadElevated .
+
+ns1:Herd02Sheep02\(8\)M\(2\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:ImmobileJaw .
+
+ns1:Herd02Sheep02\(8\)M\(2\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:Moving .
+
+ns1:Herd02Sheep02\(8\)M\(2\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 8 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(8\)Mvmt\(2\) .
+
+ns1:Herd02Sheep02\(8\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(8\)M\(1\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(8\)M\(1\)Jaw .
+
+ns1:Herd02Sheep02\(8\)Mvmt\(2\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(8\)M\(2\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(8\)M\(2\)Jaw ;
+    ns1:hasLegs ns1:Herd02Sheep02\(8\)M\(2\)Legs .
+
+ns1:Herd02Sheep02\(9\)M\(1\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadDown .
+
+ns1:Herd02Sheep02\(9\)M\(1\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:MovingJaw .
+
+ns1:Herd02Sheep02\(9\)M\(1\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:hasDuration 1 ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(9\)Mvmt\(1\) .
+
+ns1:Herd02Sheep02\(9\)M\(2\)Head a ns4:Head,
+        owl:NamedIndividual ;
+    ns1:hasHeadMovement ns1:HeadElevated .
+
+ns1:Herd02Sheep02\(9\)M\(2\)Jaw a ns4:Jaw,
+        owl:NamedIndividual ;
+    ns1:hasJawMovement ns1:ImmobileJaw .
+
+ns1:Herd02Sheep02\(9\)M\(2\)Legs a ns4:Legs,
+        owl:NamedIndividual ;
+    ns1:hasLegsMovement ns1:Moving .
+
+ns1:Herd02Sheep02\(9\)M\(2\)Period a ns1:Period,
+        owl:NamedIndividual ;
+    ns1:isPeriodOf ns1:Herd02Sheep02\(9\)Mvmt\(2\) .
+
+ns1:Herd02Sheep02\(9\)Mvmt\(1\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(9\)M\(1\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(9\)M\(1\)Jaw .
+
+ns1:Herd02Sheep02\(9\)Mvmt\(2\)Body a ns4:Body,
+        owl:NamedIndividual ;
+    ns1:hasHead ns1:Herd02Sheep02\(9\)M\(2\)Head ;
+    ns1:hasJaw ns1:Herd02Sheep02\(9\)M\(2\)Jaw ;
+    ns1:hasLegs ns1:Herd02Sheep02\(9\)M\(2\)Legs .
+
+ns1:Immobility a owl:Class ;
+    rdfs:label "لاحركة"@ar,
+        "Immobility"@en,
+        "Immobilité"@fr ;
+    ns3:entityPosition [ ] .
+
+ns1:InWaterArea a owl:DatatypeProperty ;
+    rdfs:domain ns4:Position ;
+    rdfs:range xsd:boolean .
+
+ns1:MvEyes a owl:Class ;
+    rdfs:subClassOf ns1:BodyMovement .
+
+ns1:Rumination a ns1:Behavior,
+        ns1:IngestingBehavior,
+        owl:NamedIndividual .
+
+ns1:Suckling a ns1:Behavior,
+        ns1:IngestingBehavior,
+        owl:NamedIndividual .
+
+ns1:hasPreviousMovement a owl:ObjectProperty ;
+    rdfs:domain ns1:Movement ;
+    rdfs:range ns1:Movement .
+
+ns1:hasUdder a owl:ObjectProperty ;
+    rdfs:domain ns4:Body ;
+    rdfs:range ns4:Udder .
+
+ns1:isBehaviorOf a owl:ObjectProperty ;
+    rdfs:domain ns1:Behavior ;
+    rdfs:range ns1:Movement .
+
+ns1:isMovedBy a owl:ObjectProperty ;
+    rdfs:domain ns1:Movement ;
+    rdfs:range ns4:Animal .
+
+ns1:isPeriodOf a owl:ObjectProperty ;
+    rdfs:domain ns1:Period ;
+    rdfs:range ns1:Movement .
+
+ns4:Herd02Sheep02\(1\) ns1:hasMovement ns1:Herd02Sheep02\(1\)Mvmt\(1\) .
+
+ns4:Herd02Sheep02\(2\) ns1:hasMovement ns1:Herd02Sheep02\(2\)Mvmt\(1\) .
+
+ns1:NonFoodItems a owl:Class ;
+    rdfs:label "NofoodItems"@en .
+
+ns4:Herd02Sheep02\(3\) ns1:hasMovement ns1:Herd02Sheep02\(3\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(3\)Mvmt\(2\) .
+
+ns4:Herd02Sheep02\(5\) ns1:hasMovement ns1:Herd02Sheep02\(5\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(5\)Mvmt\(2\) .
+
+ns4:Herd02Sheep02\(7\) ns1:hasMovement ns1:Herd02Sheep02\(7\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(7\)Mvmt\(2\) .
+
+ns4:Herd02Sheep02\(8\) ns1:hasMovement ns1:Herd02Sheep02\(8\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(8\)Mvmt\(2\) .
+
+ns4:Herd02Sheep02\(9\) ns1:hasMovement ns1:Herd02Sheep02\(9\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(9\)Mvmt\(2\) .
+
+ns1:Aggression a ns1:AbnormalBehavior,
+        ns1:Behavior,
+        owl:NamedIndividual ;
+    ns1:isBehaviorOf ns1:Herd02Sheep02\(4\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(6\)Mvmt\(1\) .
+
+ns1:B_Foraging a ns1:Behavior,
+        ns1:MovingBehavior,
+        owl:NamedIndividual ;
+    ns1:isBehaviorOf ns1:Herd02Sheep02\(3\)Mvmt\(2\),
+        ns1:Herd02Sheep02\(5\)Mvmt\(2\) .
+
+ns1:HeadMovesRapidly a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:Herd02Sheep02\(1\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(1\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(1\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(1\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(2\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(2\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(2\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(2\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(3\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(3\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(3\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(3\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(3\)Mvmt\(2\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:B_Foraging ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(3\)M\(2\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(3\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(3\)Mvmt\(2\)Body .
+
+ns1:Herd02Sheep02\(4\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Aggression ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(4\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(4\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(4\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(4\)Mvmt\(2\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(4\)M\(2\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(4\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(4\)Mvmt\(2\)Body .
+
+ns1:Herd02Sheep02\(4\)Mvmt\(3\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Walking ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(4\)M\(3\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(4\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(4\)Mvmt\(3\)Body .
+
+ns1:Herd02Sheep02\(5\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(5\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(5\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(5\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(5\)Mvmt\(2\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:B_Foraging ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(5\)M\(2\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(5\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(5\)Mvmt\(2\)Body .
+
+ns1:Herd02Sheep02\(6\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Aggression ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(6\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(6\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(6\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(6\)Mvmt\(2\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(6\)M\(2\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(6\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(6\)Mvmt\(2\)Body .
+
+ns1:Herd02Sheep02\(6\)Mvmt\(3\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Walking ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(6\)M\(3\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(6\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(6\)Mvmt\(3\)Body .
+
+ns1:Herd02Sheep02\(6\)Mvmt\(4\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Standing ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(6\)M\(4\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(6\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(6\)Mvmt\(4\)Body .
+
+ns1:Herd02Sheep02\(7\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(7\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(7\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(7\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(7\)Mvmt\(2\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Standing ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(7\)M\(2\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(7\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(7\)Mvmt\(2\)Body .
+
+ns1:Herd02Sheep02\(8\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(8\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(8\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(8\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(8\)Mvmt\(2\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Walking ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(8\)M\(2\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(8\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(8\)Mvmt\(2\)Body .
+
+ns1:Herd02Sheep02\(9\)Mvmt\(1\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Nibbling ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(9\)M\(1\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(9\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(9\)Mvmt\(1\)Body .
+
+ns1:Herd02Sheep02\(9\)Mvmt\(2\) a ns1:Movement,
+        owl:NamedIndividual ;
+    ns1:hasBehavior ns1:Walking ;
+    ns1:hasPeriod ns1:Herd02Sheep02\(9\)M\(2\)Period ;
+    ns1:isMovedBy ns4:Herd02Sheep02\(9\) ;
+    ns4:hasBodyForm ns1:Herd02Sheep02\(9\)Mvmt\(2\)Body .
+
+ns1:ImmobileLegs a ns1:BodyMovement,
+        ns1:MvLegs,
+        owl:NamedIndividual .
+
+ns1:IngestingBehavior a owl:Class ;
+    rdfs:label "سلوك الابتلاع"@ar,
+        "IngestingBehavior"@en,
+        "ComportementIngestion"@fr ;
+    ns3:entityPosition [ ] ;
+    ns5:AnimalBehaviorDefinition "أي خاصية قابلة للقياس أو الملاحظة تتعلق باستهلاك الموارد السائلة أو الصلبة"@ar,
+        "any measurable or observable characteristic related to the consumption of liquid or solid resources"@en,
+        "Toute caractéristique mesurable ou observable liée à la consommation de ressources liquides ou solides"@fr ;
+    rdfs:subClassOf ns1:Behavior .
+
+ns1:RestBehavior a owl:Class ;
+    rdfs:label "سلوك الراحة"@ar,
+        "RestBehavior"@en,
+        "ComportementRepos"@fr ;
+    ns3:entityPosition [ ] ;
+    ns6:hasExactSynonym "comfort behaviour" ;
+    ns5:AnimalBehaviorDefinition "أي خاصية يمكن قياسها أو ملاحظتها تتعلق بالحركة التي يتم إجراؤها للتخفيف مؤقتًا من التوتر العضلي أو التهيج الغشائي ، أو المتعلقة بالتنظيف أو إزالة الطفيليات أو تعديل تغطية السطح أو إضافة مكيفات إلى سطح الجسم"@ar,
+        "any measurable or observable characteristic related to movement performed to temporalily relieve muscular tension or integumentary irritation,  or related to the cleaning, parasite removal, surface covering adjustment, addition of conditioners to body sur"@en,
+        "Toute caractéristique mesurable ou observable liée à un mouvement effectué pour soulager temporairement une tension musculaire ou une irritation tégumentaire, ou liée au nettoyage, à l'élimination des parasites, à l'ajustement du revêtement de surface, à l'ajout de conditionneurs à la surface corporelle."@fr ;
+    rdfs:subClassOf ns1:Behavior .
+
+ns1:Standing a ns1:Behavior,
+        ns1:RestBehavior,
+        owl:NamedIndividual ;
+    ns1:isBehaviorOf ns1:Herd02Sheep02\(6\)Mvmt\(4\),
+        ns1:Herd02Sheep02\(7\)Mvmt\(2\) .
+
+ns4:Herd02Sheep02\(4\) ns1:hasMovement ns1:Herd02Sheep02\(4\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(4\)Mvmt\(2\),
+        ns1:Herd02Sheep02\(4\)Mvmt\(3\) .
+
+ns1:AbnormalBehavior a owl:Class ;
+    rdfs:label "سلوك غير طبيعي"@ar,
+        "AbnormalBehavior"@en,
+        "ComportementAnormal"@fr ;
+    ns3:entityPosition [ ] ;
+    rdfs:subClassOf ns1:Behavior .
+
+ns1:hasLegs a owl:ObjectProperty ;
+    rdfs:domain ns4:Body ;
+    rdfs:range ns4:Legs .
+
+ns1:hasLegsMovement a owl:ObjectProperty ;
+    rdfs:domain ns4:Legs ;
+    rdfs:range ns1:BodyMovement,
+        ns1:MvLegs .
+
+ns4:Herd02Sheep02\(6\) ns1:hasMovement ns1:Herd02Sheep02\(6\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(6\)Mvmt\(2\),
+        ns1:Herd02Sheep02\(6\)Mvmt\(3\),
+        ns1:Herd02Sheep02\(6\)Mvmt\(4\) .
+
+ns1:Walking a ns1:Behavior,
+        ns1:MovingBehavior,
+        owl:NamedIndividual ;
+    ns1:isBehaviorOf ns1:Herd02Sheep02\(4\)Mvmt\(3\),
+        ns1:Herd02Sheep02\(6\)Mvmt\(3\),
+        ns1:Herd02Sheep02\(8\)Mvmt\(2\),
+        ns1:Herd02Sheep02\(9\)Mvmt\(2\) .
+
+ns1:MvJaw a owl:Class ;
+    rdfs:label "فك"@ar,
+        "Jaw"@en,
+        "mâchoire"@fr ;
+    ns3:entityPosition [ ] ;
+    rdfs:subClassOf ns1:BodyMovement .
+
+ns1:MovingBehavior a owl:Class ;
+    rdfs:label "سلوك حركي"@ar,
+        "MovingBehavior"@en,
+        "ComportementMouvement"@fr ;
+    ns3:entityPosition [ ] ;
+    rdfs:subClassOf ns1:Behavior .
+
+ns1:MvLegs a owl:Class ;
+    rdfs:label "أرجل"@ar,
+        "Legs"@en,
+        "Jambes"@fr ;
+    ns3:entityPosition [ ] ;
+    rdfs:subClassOf ns1:BodyMovement .
+
+ns1:hasJaw a owl:ObjectProperty ;
+    rdfs:domain ns4:Body ;
+    rdfs:range ns4:Jaw .
+
+ns1:hasJawMovement a owl:ObjectProperty ;
+    rdfs:domain ns4:Jaw ;
+    rdfs:range ns1:BodyMovement,
+        ns1:MvJaw .
+
+ns1:MvBack a owl:Class ;
+    rdfs:subClassOf ns1:BodyMovement .
+
+ns1:hasBehavior a owl:ObjectProperty ;
+    rdfs:domain ns1:Movement ;
+    rdfs:range ns1:Behavior ;
+    owl:inverseOf ns1:isBehaviorOf .
+
+ns1:hasHead a owl:ObjectProperty ;
+    rdfs:domain ns4:Body ;
+    rdfs:range ns4:Head .
+
+ns1:hasHeadMovement a owl:ObjectProperty ;
+    rdfs:domain ns4:Head ;
+    rdfs:range ns1:BodyMovement,
+        ns1:MvHead .
+
+ns1:hasMovement a owl:ObjectProperty ;
+    rdfs:domain ns4:Animal ;
+    rdfs:range ns1:Movement ;
+    owl:inverseOf ns1:isMovedBy .
+
+ns1:MvTail a owl:Class ;
+    rdfs:label "ذيل"@ar,
+        "Tail"@en,
+        "Queue"@fr ;
+    ns3:entityPosition [ ] ;
+    rdfs:subClassOf ns1:BodyMovement .
+
+ns1:Nibbling a ns1:Behavior,
+        ns1:IngestingBehavior,
+        owl:NamedIndividual ;
+    ns1:isBehaviorOf ns1:Herd02Sheep02\(1\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(2\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(3\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(4\)Mvmt\(2\),
+        ns1:Herd02Sheep02\(5\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(6\)Mvmt\(2\),
+        ns1:Herd02Sheep02\(7\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(8\)Mvmt\(1\),
+        ns1:Herd02Sheep02\(9\)Mvmt\(1\) .
+
+ns1:ImmobileJaw a ns1:BodyMovement,
+        ns1:MvJaw,
+        owl:NamedIndividual .
+
+ns1:Moving a ns1:BodyMovement,
+        ns1:MvJaw,
+        ns1:MvLegs,
+        owl:NamedIndividual .
+
+ns1:MvHead a owl:Class ;
+    rdfs:label "رأس"@ar,
+        "Head"@en,
+        "Tête"@fr ;
+    ns3:entityPosition [ ] ;
+    rdfs:subClassOf ns1:BodyMovement .
+
+ns1:HeadElevated a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:MovingJaw a ns1:BodyMovement,
+        ns1:MvJaw,
+        owl:NamedIndividual .
+
+ns1:HeadDown a ns1:BodyMovement,
+        ns1:MvHead,
+        owl:NamedIndividual .
+
+ns1:Period a owl:Class ;
+    rdfs:label "Period",
+        "فترة"@ar,
+        "Période"@fr ;
+    ns3:entityPosition [ ] .
+
+ns1:Behavior a owl:Class ;
+    rdfs:label "سلوك"@ar,
+        "Behavior"@en,
+        "Comportement"@fr ;
+    ns3:entityPosition [ ] .
+
+ns1:Movement a owl:Class ;
+    rdfs:label "حركة"@ar,
+        "Movement"@en,
+        "Mouvement"@fr ;
+    ns3:entityPosition [ ] .
+
+ns1:BodyMovement a owl:Class ;
+    rdfs:label "BodyMovement"@en .
+
+[] ns2:argument2 ns1:MovingJaw ;
+    ns2:propertyPredicate ns1:hasJawMovement .
+
+[] ns2:propertyPredicate ns1:hasJaw .
+
+[] ns2:propertyPredicate ns1:hasHead .
+
+[] ns2:argument2 ns1:HeadLowered ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:propertyPredicate ns1:hasUdder .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:argument2 ns1:Suckling ;
+    ns2:propertyPredicate ns1:hasBehavior .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:argument2 ns1:Moving ;
+    ns2:propertyPredicate ns1:hasLegsMovement .
+
+[] ns2:argument2 ns1:ImmobileJaw ;
+    ns2:propertyPredicate ns1:hasJawMovement .
+
+[] ns2:propertyPredicate ns1:hasLegs .
+
+[] ns2:argument2 ns1:HeadDown ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:propertyPredicate ns1:hasJaw .
+
+[] ns2:propertyPredicate ns1:hasHead .
+
+[] ns2:argument2 ns1:B_Foraging ;
+    ns2:propertyPredicate ns1:hasBehavior .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:argument2 ns1:MovingJaw ;
+    ns2:propertyPredicate ns1:hasJawMovement .
+
+[] ns2:argument2 ns1:HeadDown ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:propertyPredicate ns1:hasJaw .
+
+[] ns2:propertyPredicate ns1:hasHead .
+
+[] ns2:argument2 ns1:Nibbling ;
+    ns2:propertyPredicate ns1:hasBehavior .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:argument2 ns1:MovingJaw ;
+    ns2:propertyPredicate ns1:hasJawMovement .
+
+[] ns2:propertyPredicate ns1:InWaterArea .
+
+[] ns2:argument2 ns1:HeadDown ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:propertyPredicate ns1:hasJaw .
+
+[] ns2:propertyPredicate ns1:hasHead .
+
+[] ns2:argument2 ns1:Drinking ;
+    ns2:propertyPredicate ns1:hasBehavior .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:argument2 ns1:Moving ;
+    ns2:propertyPredicate ns1:hasLegsMovement .
+
+[] ns2:argument2 ns1:HeadElevated ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:propertyPredicate ns1:hasLegs .
+
+[] ns2:propertyPredicate ns1:hasHead .
+
+[] ns2:argument2 ns1:HeadMovesRapidly ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:argument2 ns1:Aggression ;
+    ns2:propertyPredicate ns1:hasBehavior .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:argument2 ns1:HeadElevated ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:argument2 ns1:ImmobileJaw ;
+    ns2:propertyPredicate ns1:hasJawMovement .
+
+[] ns2:propertyPredicate ns1:hasLegs .
+
+[] ns2:propertyPredicate ns1:hasJaw .
+
+[] ns2:propertyPredicate ns1:hasHead .
+
+[] ns2:argument2 ns1:ImmobileLegs ;
+    ns2:propertyPredicate ns1:hasLegsMovement .
+
+[] ns2:argument2 ns1:Standing ;
+    ns2:propertyPredicate ns1:hasBehavior .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:argument2 ns1:Moving ;
+    ns2:propertyPredicate ns1:hasLegsMovement .
+
+[] ns2:argument2 ns1:HeadElevated ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:argument2 ns1:ImmobileJaw ;
+    ns2:propertyPredicate ns1:hasJawMovement .
+
+[] ns2:propertyPredicate ns1:hasLegs .
+
+[] ns2:propertyPredicate ns1:hasJaw .
+
+[] ns2:propertyPredicate ns1:hasHead .
+
+[] ns2:argument2 ns1:Walking ;
+    ns2:propertyPredicate ns1:hasBehavior .
+
+[] ns2:propertyPredicate ns1:hasMovement .
+
+[] ns2:argument2 ns1:HeadElevated ;
+    ns2:propertyPredicate ns1:hasHeadMovement .
+
+[] ns2:argument2 ns1:MovingJaw ;
+    ns2:propertyPredicate ns1:hasJawMovement .
+
+[] ns2:propertyPredicate ns1:hasJaw .
+
+[] ns2:propertyPredicate ns1:hasHead .
+
+[] ns2:argument2 ns1:Rumination ;
+    ns2:propertyPredicate ns1:hasBehavior .
+
