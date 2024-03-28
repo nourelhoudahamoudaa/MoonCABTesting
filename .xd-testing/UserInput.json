@@ -6,25 +6,5 @@
       "userDefined": true
     }
   ],
-  "fragments": [
-    {
-      "name": "Animal",
-      "ontologyName": "MoonCAB",
-      "fileName": "MoonCAB/Animal/AnimalBehavior_Animal.owl",
-      "tests": [
-        {
-          "type": "COMPETENCY_QUESTION",
-          "content": "",
-          "reasoner": "hermiT 1.4.3.456",
-          "status": "running",
-          "queryFileName": "MoonCAB/Animal/queries/SPARQLQueries.txt",
-          "data": "",
-          "dataFileName": "MoonCAB/Animal/datasets/CompetencyQuestions.txt",
-          "expectedResults": "",
-          "expectedResultsFileName": "MoonCAB/Animal/expectedResults/ExpectedResults.txt",
-          "id": "CQ001"
-        }
-      ]
-    }
-  ]
+  "fragments": []
 }
