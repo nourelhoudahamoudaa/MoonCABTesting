@@ -3,7 +3,21 @@
     {
       "name": "Behavior",
       "ontologyName": "MoonCAB",
-      "fileName": "MoonCAB/Behavior/Behavior.owl"
+      "fileName": "MoonCAB/Behavior/Behavior.owl",
+      "tests": [
+        {
+          "type": "COMPETENCY_QUESTION",
+          "content": "What is the behavior of the movement Herd02Sheep02(4)Mvmt(1)?",
+          "reasoner": "hermiT 1.4.3.456",
+          "status": "running",
+          "queryFileName": "MoonCAB/Behavior/queries/SPARQLQueries.txt",
+          "data": "",
+          "dataFileName": "MoonCAB/Behavior/datasets/EPData.ttl",
+          "expectedResults": "",
+          "expectedResultsFileName": "MoonCAB/Behavior/expectedResults/ExpectedResults.json",
+          "id": "CQ001"
+        }
+      ]
     }
   ],
   "ontologies": [
